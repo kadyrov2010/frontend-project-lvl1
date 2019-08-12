@@ -2,7 +2,10 @@ install:
 	npm install
 
 start:
-	npx babel-node src/bin/brain-games.js
+	sudo npx babel-node src/bin/brain-games.js
+
+trans:
+	sudo npx babel src --out-dir dist
 
 publish:
 	npm publish --dry-run
