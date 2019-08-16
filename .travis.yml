@@ -1,0 +1,15 @@
+---
+
+language: node_js
+node_js:
+  - node
+
+script:
+  - make lint
+  - make test
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist
