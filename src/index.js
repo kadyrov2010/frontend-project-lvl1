@@ -33,7 +33,6 @@ export const brainCalc = () => {
   console.log(`Hello, ${username}\n`);
   let count = 0;
   while (count < 3) {
-    count += 1;
     const cos = randomNumb(1, 3);
     const num1 = randomNumb(1, 10);
     const num2 = randomNumb(1, 10);
@@ -43,7 +42,7 @@ export const brainCalc = () => {
       if (num1 + num2 === Number(answer)) {
         console.log('Correct!');
       } else {
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.`);
+        console.log(`'${answer}' is wrong answer ;(. Correct answer was ${num1 + num2}.`);
         break;
       }
     } else if (cos === 2) {
@@ -52,7 +51,7 @@ export const brainCalc = () => {
       if (num1 - num2 === Number(answer)) {
         console.log('Correct!');
       } else {
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.`);
+        console.log(`'${answer}' is wrong answer ;(. Correct answer was ${num1 - num2}.`);
         break;
       }
     } else if (cos === 3) {
@@ -61,10 +60,11 @@ export const brainCalc = () => {
       if (num1 * num2 === Number(answer)) {
         console.log('Correct!');
       } else {
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.`);
+        console.log(`'${answer}' is wrong answer ;(. Correct answer was ${num1 * num2}.`);
         break;
-      }
+      } 
     }
+    count += 1;
   }
   if (count === 3) {
     console.log(`Congratulations, ${username}!`);
