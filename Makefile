@@ -2,7 +2,7 @@ install:
 	npm install
 
 start:
-	sudo npx babel-node src/bin/brain-games.js
+	sudo npx babel-node src/bin/brain-gcd.js
 
 trans:
 	sudo npx babel src --out-dir dist
