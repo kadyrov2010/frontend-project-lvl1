@@ -135,6 +135,7 @@ export const brainProg = () => {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was ${step}.`);
       break;
     }
+    count1 += 1;
   }
   if (count1 === 3) {
     console.log(`Congratulations, ${username}!`);
