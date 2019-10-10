@@ -8,7 +8,7 @@ export const comNod = (a, b) => {
       b %= a;
     }
   }
-  return a + b; 
+  return a + b;
 };
 export const randomNumb = (min = 0, max = 189) => Math.floor(Math.random() * (max - min + 1)) + min;
 export const brainEven = () => {
@@ -72,7 +72,7 @@ export const brainCalc = () => {
       } else {
         console.log(`'${answer}' is wrong answer ;(. Correct answer was ${num1 * num2}.`);
         break;
-      } 
+      }
     }
     count += 1;
   }
@@ -102,6 +102,41 @@ export const brainGcd = () => {
     count += 1;
   }
   if (count === 3) {
+    console.log(`Congratulations, ${username}!`);
+  } else {
+    console.log(`Let's try again, ${username}!`);
+  }
+};
+
+export const brainProg = () => {
+  console.log('Welcome to the Brain Games!\nFind the greatest common divisor of given numbers.\n');
+  const username = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${username}\n`);
+  let count1 = 0;
+  while (count1 < 3) {
+    let start = randomNumb();
+    const step = randomNumb(1, 5);
+    const findElem = randomNumb(2, 7);
+    let count = 0;
+    let res = '';
+    while (count < 9) {
+      start += step;
+      res = `${res}  ${start}`;
+      if (count === findElem) {
+        res = `${res}  ..`;
+      }
+      count += 1;
+    }
+    console.log(`Question: ${res}`);
+    const answer = readlineSync.question('Your aswer: ');
+    if (step === Number(answer)) {
+      console.log('Correct!');
+    } else {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was ${step}.`);
+      break;
+    }
+  }
+  if (count1 === 3) {
     console.log(`Congratulations, ${username}!`);
   } else {
     console.log(`Let's try again, ${username}!`);
