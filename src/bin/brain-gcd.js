@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { brainGsd} from '..';
+import { brainGcd } from '..';
 
-console.log(brainGsd());
+console.log(brainGcd());
