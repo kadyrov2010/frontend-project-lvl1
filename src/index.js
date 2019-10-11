@@ -11,6 +11,17 @@ export const comNod = (a, b) => {
   return a + b;
 };
 export const randomNumb = (min = 0, max = 189) => Math.floor(Math.random() * (max - min + 1)) + min;
+export const isPrime = (num) => {
+  if (num < 2) {
+    return false;
+  }
+  for (let i = 2; i < num; i += 1) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
 export const brainEven = () => {
   console.log('Welcome to the Brain Games!\nAnswer "yes" if the number is even, otherwise answer "no".\n');
   const username = readlineSync.question('May I have your name? ');
@@ -138,6 +149,32 @@ export const brainProg = () => {
     count1 += 1;
   }
   if (count1 === 3) {
+    console.log(`Congratulations, ${username}!`);
+  } else {
+    console.log(`Let's try again, ${username}!`);
+  }
+};
+
+export const brainPrime = () => {
+  console.log('Welcome to the Brain Games!\nAnswer "yes" if given number is prime. Otherwise answer "no".\n');
+  const username = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${username}\n`);
+  let count = 0;
+  while (count < 3) {
+    const num = randomNumb(1, 50);
+    console.log(`Question: ${num}`);
+    const answer = readlineSync.question('Your answer: ');
+    if (isPrime(num) === true && answer === 'yes') {
+      console.log('Correct!');
+    } else if (isPrime(num) === false && answer === 'no') {
+      console.log('Correct');
+    } else {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.`);
+      break;
+    }
+    count += 1;
+  }
+  if (count === 3) {
     console.log(`Congratulations, ${username}!`);
   } else {
     console.log(`Let's try again, ${username}!`);

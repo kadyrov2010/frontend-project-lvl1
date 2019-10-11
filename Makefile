@@ -2,7 +2,7 @@ install:
 	npm install
 
 start:
-	sudo npx babel-node src/bin/brain-gcd.js
+	sudo npx babel-node src/bin/brain-prime.js
 
 trans:
 	sudo npx babel src --out-dir dist
