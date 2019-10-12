@@ -1,7 +1,7 @@
 {
   "name": "project1",
   "version": "1.5.0",
-  "description": "",
+  "description": "Brain games",
   "main": "index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
@@ -24,7 +24,7 @@
     "type": "git",
     "url": "git+https://github.com/kadyrov2010/frontend-project-lvl1.git"
   },
-  "author": "",
+  "author": "Aleksanr Kadyrov",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kadyrov2010/frontend-project-lvl1/issues"

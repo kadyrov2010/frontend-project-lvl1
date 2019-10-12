@@ -3,8 +3,10 @@ import readlineSync from 'readline-sync';
 export const comNod = (a, b) => {
   while (a !== 0 && b !== 0) {
     if (a > b) {
+      // eslint-disable-next-line no-param-reassign
       a %= b;
     } else {
+      // eslint-disable-next-line no-param-reassign
       b %= a;
     }
   }
