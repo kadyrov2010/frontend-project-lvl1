@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { brainPrime } from '..';
+import gameIsPrime from '../games/prime';
 
-console.log(brainPrime());
+gameIsPrime();

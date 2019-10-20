@@ -1,6 +1,6 @@
 {
   "name": "project1",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Brain games",
   "main": "index.js",
   "bin": {
@@ -24,6 +24,12 @@
     "type": "git",
     "url": "git+https://github.com/kadyrov2010/frontend-project-lvl1.git"
   },
+  "keywords": [
+    "games",
+    "brain",
+    "mathematics",
+    "mathGames"
+  ],
   "author": "Aleksanr Kadyrov",
   "license": "ISC",
   "bugs": {
@@ -42,6 +48,7 @@
     "eslint-plugin-import": "^2.18.2"
   },
   "dependencies": {
+    "hexlet-pairs": "^1.0.8",
     "readline-sync": "^1.4.10"
   }
 }

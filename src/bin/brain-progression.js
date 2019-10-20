@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { brainProg } from '..';
+import gameProgres from '../games/progression';
 
-console.log(brainProg());
+gameProgres();
