@@ -5,10 +5,9 @@ import randomNumb from '../utilities';
 const ruleGame = 'Answer "yes" if the number is even, otherwise answer "no".\n';
 
 const conditionsGame = () => {
-  const num = randomNumb();
-  const correctAnswer = num % 2 === 0 ? 'yes' : 'no';
-  const quest = num;
-  return cons(quest, correctAnswer);
+  const question = randomNumb();
+  const correctAnswer = question % 2 === 0 ? 'yes' : 'no';
+  return cons(question, correctAnswer);
 };
 
 const gameEven = () => frameGame(ruleGame, conditionsGame);

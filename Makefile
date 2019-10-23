@@ -11,4 +11,4 @@ publish:
 	sudo npm publish --dry-run
 
 lint:
-	npx eslint
+	npm run eslint

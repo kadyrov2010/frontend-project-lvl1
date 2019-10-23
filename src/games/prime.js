@@ -8,7 +8,7 @@ const isPrime = (x) => {
   if (x < 2) {
     return false;
   }
-  for (let i = 2; i < x; i += 1) {
+  for (let i = 2; i < (x / 2); i += 1) {
     if (x % i === 0) {
       return false;
     }
@@ -17,10 +17,9 @@ const isPrime = (x) => {
 };
 
 const conditionsGame = () => {
-  const num = randomNumb();
-  const correctAnswer = isPrime(num) ? 'yes' : 'no';
-  const quest = num;
-  return cons(quest, correctAnswer);
+  const question = randomNumb();
+  const correctAnswer = isPrime(question) ? 'yes' : 'no';
+  return cons(question, correctAnswer);
 };
 
 const gameIsPrime = () => frameGame(ruleGame, conditionsGame);

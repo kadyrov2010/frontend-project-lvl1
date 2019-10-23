@@ -4,25 +4,26 @@ import randomNumb from '../utilities';
 
 const ruleGame = 'What is the result of the expression?\n';
 
+const firstCase = 1;
+const secondCase = 2;
+const lastCase = 3;
+
 const conditionsGame = () => {
-  const randomExpr = randomNumb(1, 3);
+  const randomExpr = randomNumb(firstCase, lastCase);
   const num1 = randomNumb();
   const num2 = randomNumb();
-  if (randomExpr === 1) {
-    const expression = `${num1} + ${num2}`;
+  if (randomExpr === firstCase) {
+    const question = `${num1} + ${num2}`;
     const correctAnswer = String(num1 + num2);
-    const quest = expression;
-    return cons(quest, correctAnswer);
-  } if (randomExpr === 2) {
-    const expression = `${num1} - ${num2}`;
+    return cons(question, correctAnswer);
+  } if (randomExpr === secondCase) {
+    const question = `${num1} - ${num2}`;
     const correctAnswer = String(num1 - num2);
-    const quest = expression;
-    return cons(quest, correctAnswer);
+    return cons(question, correctAnswer);
   }
-  const expression = `${num1} * ${num2}`;
+  const question = `${num1} * ${num2}`;
   const correctAnswer = String(num1 * num2);
-  const quest = expression;
-  return cons(quest, correctAnswer);
+  return cons(question, correctAnswer);
 };
 
 const gameCalc = () => frameGame(ruleGame, conditionsGame);

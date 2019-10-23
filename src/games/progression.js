@@ -4,23 +4,31 @@ import randomNumb from '../utilities';
 
 const ruleGame = 'What number is missing in this progression?\n';
 
+const minStep = 1;
+const maxStep = 5;
+const leftBorder = 2;
+const rightBorder = 7;
+
 const conditionsGame = () => {
   let start = randomNumb();
-  const step = randomNumb(1, 5);
-  const findElem = randomNumb(2, 7);
+  const step = randomNumb(minStep, maxStep);
+  const hiddenNumb = randomNumb(leftBorder, rightBorder);
   let count = 0;
   let res = '';
+  let answer = 0;
   while (count < 9) {
     start += step;
-    res = `${res}  ${start}`;
-    if (count === findElem) {
+    if (count === hiddenNumb) {
       res = `${res}  ..`;
+      answer = start;
+    } else {
+      res = `${res}  ${start}`;
     }
     count += 1;
   }
-  const quest = res;
-  const correctAnswer = String(step);
-  return cons(quest, correctAnswer)
+  const question = res;
+  const correctAnswer = String(answer);
+  return cons(question, correctAnswer);
 };
 
 const gameProgres = () => frameGame(ruleGame, conditionsGame);
