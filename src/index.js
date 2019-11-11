@@ -26,7 +26,7 @@ const playRounds = (conditionsGame, currentRound, roundsToWin) => {
 const roundsToWin = 3;
 const currentRound = 1;
 
-export const frameGame = (ruleGame, conditionsGame) => {
+const frameGame = (ruleGame, conditionsGame) => {
   console.log('Welcome to the Brain Games!\n');
   console.log(`${ruleGame}\n`);
   const name = readlineSync.question('May I have your name? ');
@@ -38,3 +38,5 @@ export const frameGame = (ruleGame, conditionsGame) => {
     console.log(`Let's try again, ${name}!`);
   }
 };
+
+export default frameGame;

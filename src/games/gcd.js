@@ -1,18 +1,12 @@
 import { cons } from 'hexlet-pairs';
-import { frameGame } from '..';
+import frameGame from '..';
 import randomNumb from '../utilities';
 
 const ruleGame = 'Find the greatest common divisor of given numbers.\n';
 
-const getCommonDiv = (a, b) => {
-  while (a !== 0 && b !== 0) {
-    if (a > b) {
-      a %= b;
-    } else {
-      b %= a;
-    }
-  }
-  return a + b;
+const getCommonDiv = (x, y) => {
+  if (!y) return y === 0 ? x : NaN;
+  return getCommonDiv(y, x % y);
 };
 
 const generateCondition = () => {

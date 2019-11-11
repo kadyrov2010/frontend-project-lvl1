@@ -1,5 +1,5 @@
 import { cons } from 'hexlet-pairs';
-import { frameGame } from '..';
+import frameGame from '..';
 import randomNumb from '../utilities';
 
 const ruleGame = 'What number is missing in this progression?\n';
