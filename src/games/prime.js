@@ -16,12 +16,12 @@ const isPrime = (x) => {
   return true;
 };
 
-const conditionsGame = () => {
+const generateCondition = () => {
   const question = randomNumb();
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
   return cons(question, correctAnswer);
 };
 
-const gameIsPrime = () => frameGame(ruleGame, conditionsGame);
+const gameIsPrime = () => frameGame(ruleGame, generateCondition);
 
 export default gameIsPrime;

@@ -4,33 +4,31 @@ import randomNumb from '../utilities';
 
 const ruleGame = 'What number is missing in this progression?\n';
 
-const minStep = 1;
-const maxStep = 5;
-const leftBorder = 2;
-const rightBorder = 7;
+const startItemMin = 1;
+const startItemMax = 9;
 
-const conditionsGame = () => {
-  let start = randomNumb();
-  const step = randomNumb(minStep, maxStep);
-  const hiddenNumb = randomNumb(leftBorder, rightBorder);
-  let count = 0;
-  let res = '';
-  let answer = 0;
-  while (count < 9) {
-    start += step;
-    if (count === hiddenNumb) {
-      res = `${res}  ..`;
-      answer = start;
+const progressionLength = 10;
+const minStep = 1;
+const maxStep = 9;
+
+const generateCondition = () => {
+  const progressionStep = randomNumb(minStep, maxStep);
+  const startItem = randomNumb(startItemMin, startItemMax);
+  const hiddenItemIndex = randomNumb(0, progressionLength - 1);
+  let question = '';
+  const hiddenItem = startItem + (hiddenItemIndex * progressionStep);
+  const correctAnswer = String(hiddenItem);
+  for (let i = 0; i < progressionLength; i += 1) {
+    if (i === hiddenItemIndex) {
+      question += '.. ';
     } else {
-      res = `${res}  ${start}`;
+      const nthItem = startItem + (i * progressionStep);
+      question += `${nthItem} `;
     }
-    count += 1;
   }
-  const question = res;
-  const correctAnswer = String(answer);
   return cons(question, correctAnswer);
 };
 
-const gameProgres = () => frameGame(ruleGame, conditionsGame);
+const gameProgres = () => frameGame(ruleGame, generateCondition);
 
 export default gameProgres;

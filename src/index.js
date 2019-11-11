@@ -2,12 +2,12 @@ import readlineSync from 'readline-sync';
 import { car, cdr } from 'hexlet-pairs';
 
 
-const playTime = (gameCondit, currentGame, lastGame) => {
-  const regulat = gameCondit();
+const playRounds = (conditionsGame, currentRound, roundsToWin) => {
+  const regulat = conditionsGame();
   const quest = car(regulat);
   const correctAnswer = cdr(regulat);
 
-  if (currentGame > lastGame) {
+  if (currentRound > roundsToWin) {
     return true;
   }
 
@@ -20,18 +20,18 @@ const playTime = (gameCondit, currentGame, lastGame) => {
     console.log(`'${answer}' is wrong answer ;( Correct answer was '${correctAnswer}'`);
     return false;
   }
-  return playTime(gameCondit, currentGame + 1, lastGame);
+  return playRounds(conditionsGame, currentRound + 1, roundsToWin);
 };
 
-const lastGame = 3;
-const currentGame = 1;
+const roundsToWin = 3;
+const currentRound = 1;
 
 export const frameGame = (ruleGame, conditionsGame) => {
   console.log('Welcome to the Brain Games!\n');
   console.log(`${ruleGame}\n`);
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}\n`);
-  const isWinner = playTime(conditionsGame, currentGame, lastGame);
+  const isWinner = playRounds(conditionsGame, currentRound, roundsToWin);
   if (isWinner) {
     console.log(`Congratulations, ${name}!`);
   } else {
