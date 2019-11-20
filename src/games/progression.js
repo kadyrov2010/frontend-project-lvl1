@@ -1,8 +1,8 @@
 import { cons } from 'hexlet-pairs';
-import frameGame from '..';
+import playGame from '..';
 import randomNumb from '../utilities';
 
-const ruleGame = 'What number is missing in this progression?\n';
+const ruleGame = 'What number is missing in this progression?';
 
 const startItemMin = 1;
 const startItemMax = 9;
@@ -20,15 +20,15 @@ const generateCondition = () => {
   const correctAnswer = String(hiddenItem);
   for (let i = 0; i < progressionLength; i += 1) {
     if (i === hiddenItemIndex) {
-      question += '.. ';
+      question = `${question} ..`;
     } else {
       const nthItem = startItem + (i * progressionStep);
-      question += `${nthItem} `;
+      question = `${question} ${nthItem}`;
     }
   }
   return cons(question, correctAnswer);
 };
 
-const gameProgres = () => frameGame(ruleGame, generateCondition);
+const gameProgression = () => playGame(ruleGame, generateCondition);
 
-export default gameProgres;
+export default gameProgression;

@@ -1,7 +1,6 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from 'hexlet-pairs';
 
-
 const playRounds = (conditionsGame, currentRound, roundsToWin) => {
   const regulat = conditionsGame();
   const quest = car(regulat);
@@ -26,7 +25,7 @@ const playRounds = (conditionsGame, currentRound, roundsToWin) => {
 const roundsToWin = 3;
 const currentRound = 1;
 
-const frameGame = (ruleGame, conditionsGame) => {
+const playGame = (ruleGame, conditionsGame) => {
   console.log('Welcome to the Brain Games!\n');
   console.log(`${ruleGame}\n`);
   const name = readlineSync.question('May I have your name? ');
@@ -39,4 +38,4 @@ const frameGame = (ruleGame, conditionsGame) => {
   }
 };
 
-export default frameGame;
+export default playGame;

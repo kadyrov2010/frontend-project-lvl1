@@ -1,35 +1,27 @@
 import { cons } from 'hexlet-pairs';
-import frameGame from '..';
+import playGame from '..';
 import randomNumb from '../utilities';
 
-const ruleGame = 'What is the result of the expression?\n';
+const ruleGame = 'What is the result of the expression?';
 
-const operandsList = ['+', '*', '-'];
+const operands = ['+', '*', '-'];
 const minNumber = 0;
 const maxNumber = 15;
 
 const generateCondition = () => {
-  const makeOperandChoice = operandsList[Math.floor(Math.random() * operandsList.length)];
+  const operandChoice = operands[Math.floor(Math.random() * operands.length)];
   const firstNumber = randomNumb(minNumber, maxNumber);
   const secondNumber = randomNumb(minNumber, maxNumber);
-  switch (makeOperandChoice) {
-    case '+': {
-      const question = `${firstNumber} + ${secondNumber}`;
-      const correctAnswer = firstNumber + secondNumber;
-      return cons(question, String(correctAnswer));
+  const correctAnswer = () => {
+    switch (operandChoice) {
+      case '+': return String(firstNumber + secondNumber);
+      case '*': return String(firstNumber * secondNumber);
+      default: return String(firstNumber - secondNumber);
     }
-    case '*': {
-      const question = `${firstNumber} x ${secondNumber}`;
-      const correctAnswer = firstNumber * secondNumber;
-      return cons(question, String(correctAnswer));
-    }
-    default: {
-      const question = `${firstNumber} - ${secondNumber}`;
-      const correctAnswer = firstNumber - secondNumber;
-      return cons(question, String(correctAnswer));
-    }
-  }
+  };
+  const question = `${firstNumber} ${operandChoice} ${secondNumber}`;
+  return cons(question, correctAnswer());
 };
-const gameCalc = () => frameGame(ruleGame, generateCondition);
+const gameCalc = () => playGame(ruleGame, generateCondition);
 
 export default gameCalc;
