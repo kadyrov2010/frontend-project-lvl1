@@ -14,7 +14,7 @@ const isPrime = (x) => {
     }
   }
   return true;
-}
+};
 
 const generateCondition = () => {
   const question = randomNumb();
