@@ -4,27 +4,29 @@ import randomNumb from '../utilities';
 
 const ruleGame = 'What is the result of the expression?';
 
-const operand = ['+', '*', '-'];
+const operands = ['+', '*', '-'];
 const minNum = 0;
 const maxNum = 15;
 const subscript = 0;
-const superscript = 2;
+const superscript = operands.length - 1;
+
+const getValue = (choice, num1, num2) => {
+  switch (choice) {
+    case '+': return String(num1 + num2);
+    case '*': return String(num1 * num2);
+    default: return String(num1 - num2);
+  }
+};
 
 const generateCondition = () => {
-  const firstNum = randomNumb(minNum, maxNum);
-  const secondNum = randomNumb(minNum, maxNum);
-  const operandChoice = operand[randomNumb(subscript, superscript)];
-  const getOperand = (choice) => {
-    switch (choice) {
-      case '+': return String(firstNum + secondNum);
-      case '*': return String(firstNum * secondNum);
-      default: return String(firstNum - secondNum);
-    }
-  };
-  const correctAnswer = getOperand(operandChoice);
-  const question = `${firstNum} ${operandChoice} ${secondNum}`;
+  const num1 = randomNumb(minNum, maxNum);
+  const num2 = randomNumb(minNum, maxNum);
+  const operand = operands[randomNumb(subscript, superscript)];
+  const correctAnswer = getValue(operand, num1, num2);
+  const question = `${num1} ${operand} ${num2}`;
   return cons(question, correctAnswer);
 };
+
 const gameCalc = () => playGame(generateCondition, ruleGame);
 
 export default gameCalc;

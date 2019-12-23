@@ -17,6 +17,6 @@ const generateCondition = () => {
   return cons(qustion, correctAnswer);
 };
 
-const gameGsd = () => playGame(ruleGame, generateCondition);
+const gameGсd = () => playGame(generateCondition, ruleGame);
 
-export default gameGsd;
+export default gameGсd;

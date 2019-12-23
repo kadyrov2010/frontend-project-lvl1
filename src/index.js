@@ -8,11 +8,11 @@ const playGame = (dataGame, rule) => {
   console.log(`${rule}\n`);
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}\n`);
-  const playRounds = (data, rounds) => {
-    const regulat = data();
+  const isWinner = (count) => {
+    const regulat = dataGame();
     const question = car(regulat);
     const correctAnswer = cdr(regulat);
-    if (rounds === 0) {
+    if (count === 0) {
       return true;
     }
     console.log(`Question: ${question}`);
@@ -24,10 +24,9 @@ const playGame = (dataGame, rule) => {
       console.log(`'${answer}' is wrong answer ;( Correct answer was '${correctAnswer}'`);
       return false;
     }
-    return playRounds(dataGame, rounds - 1);
+    return isWinner(count - 1);
   };
-  const isWinner = playRounds(dataGame, roundsToWin);
-  if (isWinner) {
+  if (isWinner(roundsToWin)) {
     console.log(`Congratulations, ${name}!`);
   } else {
     console.log(`Let's try again, ${name}!`);

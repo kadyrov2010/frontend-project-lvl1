@@ -1,6 +1,6 @@
 {
   "name": "brain-games-alexkadyrov",
-  "version": "1.5.1",
+  "version": "1.5.4",
   "description": "Brain games",
   "main": "",
   "bin": {
@@ -49,7 +49,6 @@
     "eslint-plugin-import": "^2.18.2"
   },
   "dependencies": {
-    "eslint-plugin-jest": "^23.0.3",
     "hexlet-pairs": "^1.0.8",
     "readline-sync": "^1.4.10"
   }

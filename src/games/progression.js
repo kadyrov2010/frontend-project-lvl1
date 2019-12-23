@@ -16,8 +16,7 @@ const generateCondition = () => {
   const startItem = randomNumb(startItemMin, startItemMax);
   const hiddenItemIndex = randomNumb(0, progressionLength - 1);
   let question = '';
-  const hiddenItem = startItem + (hiddenItemIndex * progressionStep);
-  const correctAnswer = String(hiddenItem);
+  const correctAnswer = String(startItem + (hiddenItemIndex * progressionStep));
   for (let i = 0; i < progressionLength; i += 1) {
     if (i === hiddenItemIndex) {
       question = `${question}.. `;
@@ -29,6 +28,6 @@ const generateCondition = () => {
   return cons(question, correctAnswer);
 };
 
-const gameProgression = () => playGame(ruleGame, generateCondition);
+const gameProgression = () => playGame(generateCondition, ruleGame);
 
 export default gameProgression;
