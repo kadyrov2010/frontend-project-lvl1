@@ -19,10 +19,10 @@ const generateCondition = () => {
   const correctAnswer = String(startItem + (hiddenItemIndex * progressionStep));
   for (let i = 0; i < progressionLength; i += 1) {
     if (i === hiddenItemIndex) {
-      question = `${question}.. `;
+      question = `${question} ..`;
     } else {
       const nextItem = startItem + (i * progressionStep);
-      question = `${question}${nextItem} `;
+      question = `${question} ${nextItem}`;
     }
   }
   return cons(question, correctAnswer);
