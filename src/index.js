@@ -3,17 +3,17 @@ import { car, cdr } from 'hexlet-pairs';
 
 const roundsToWin = 3;
 
-const playGame = (dataGame, rule) => {
+const playGame = (getData, rule) => {
   console.log('Welcome to the Brain Games!\n');
   console.log(`${rule}\n`);
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}\n`);
-  const isWinner = (count) => {
-    const regulat = dataGame();
-    const question = car(regulat);
-    const correctAnswer = cdr(regulat);
+  const iter = (count) => {
+    const data = getData();
+    const question = car(data);
+    const correctAnswer = cdr(data);
     if (count === 0) {
-      return true;
+      return console.log(`Congratulations, ${name}!`);
     }
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
@@ -22,15 +22,11 @@ const playGame = (dataGame, rule) => {
       console.log('Correct!');
     } else {
       console.log(`'${answer}' is wrong answer ;( Correct answer was '${correctAnswer}'`);
-      return false;
+      return console.log(`Let's try again, ${name}!`);
     }
-    return isWinner(count - 1);
+    return iter(count - 1);
   };
-  if (isWinner(roundsToWin)) {
-    console.log(`Congratulations, ${name}!`);
-  } else {
-    console.log(`Let's try again, ${name}!`);
-  }
+  return iter(roundsToWin);
 };
 
 export default playGame;

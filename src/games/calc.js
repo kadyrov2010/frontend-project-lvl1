@@ -4,11 +4,11 @@ import randomNumb from '../utilities';
 
 const ruleGame = 'What is the result of the expression?';
 
-const operands = ['+', '*', '-'];
+const operators = ['+', '*', '-'];
 const minNum = 0;
 const maxNum = 15;
 const subscript = 0;
-const superscript = operands.length - 1;
+const superscript = operators.length - 1;
 
 const getValue = (choice, num1, num2) => {
   switch (choice) {
@@ -21,7 +21,7 @@ const getValue = (choice, num1, num2) => {
 const generateCondition = () => {
   const num1 = randomNumb(minNum, maxNum);
   const num2 = randomNumb(minNum, maxNum);
-  const operand = operands[randomNumb(subscript, superscript)];
+  const operand = operators[randomNumb(subscript, superscript)];
   const correctAnswer = getValue(operand, num1, num2);
   const question = `${num1} ${operand} ${num2}`;
   return cons(question, correctAnswer);
