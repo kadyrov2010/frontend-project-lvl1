@@ -13,7 +13,8 @@ const playGame = (getData, rule) => {
     const question = car(data);
     const correctAnswer = cdr(data);
     if (count === 0) {
-      return console.log(`Congratulations, ${name}!`);
+      console.log(`Congratulations, ${name}!`);
+      return;
     }
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
@@ -22,7 +23,8 @@ const playGame = (getData, rule) => {
       console.log('Correct!');
     } else {
       console.log(`'${answer}' is wrong answer ;( Correct answer was '${correctAnswer}'`);
-      return console.log(`Let's try again, ${name}!`);
+      console.log(`Let's try again, ${name}!`);
+      return;
     }
     return iter(count - 1);
   };
