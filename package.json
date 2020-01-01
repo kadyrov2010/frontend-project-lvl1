@@ -1,0 +1,55 @@
+{
+  "name": "brain-games-alexkadyrov",
+  "version": "1.5.4",
+  "description": "Brain games",
+  "main": "",
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js",
+    "brain-gcd": "dist/bin/brain-gcd.js",
+    "brain-progression": "dist/bin/brain-progression.js",
+    "brain-prime": "dist/bin/brain-prime.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "eslint": "eslint",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel-node": "babel-node",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kadyrov2010/frontend-project-lvl1.git"
+  },
+  "keywords": [
+    "games",
+    "brain",
+    "mathematics",
+    "mathGames"
+  ],
+  "author": "Aleksanr Kadyrov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kadyrov2010/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/kadyrov2010/frontend-project-lvl1#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.18.2"
+  },
+  "dependencies": {
+    "hexlet-pairs": "^1.0.8",
+    "readline-sync": "^1.4.10"
+  }
+}

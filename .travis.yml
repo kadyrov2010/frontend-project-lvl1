@@ -1,0 +1,13 @@
+language: node_js
+
+node_js:
+  - node
+
+script:
+  - make lint
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  
