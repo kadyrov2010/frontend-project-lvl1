@@ -26,7 +26,7 @@ const playGame = (getData, rule) => {
       console.log(`Let's try again, ${name}!`);
       return;
     }
-    return iter(count - 1);
+    iter(count - 1);
   };
   return iter(roundsToWin);
 };
